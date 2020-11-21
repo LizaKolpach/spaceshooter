@@ -5,7 +5,7 @@ using UnityEngine;
 public class S_ZigZag : MonoBehaviour
 {
     public float amplitude;
-    public Vector3 speed;
+    public Vector3 InitialSpeed;
     Vector3 InitialPosition;
     
     // Start is called before the first frame update
@@ -18,14 +18,14 @@ public class S_ZigZag : MonoBehaviour
     void Update()
     {
         float subtraction = Mathf.Abs(gameObject.transform.position.x - InitialPosition.x);
-        
+        Vector3 speed = InitialSpeed * Time.deltaTime;
         if (subtraction < amplitude)
         {
             gameObject.transform.position = new Vector3(transform.position.x + speed.x, transform.position.y, transform.position.z - speed.z);
         }
         else
         {
-            speed.x *= -1;
+            InitialSpeed.x *= -1;
             InitialPosition = gameObject.transform.position;
         }
             

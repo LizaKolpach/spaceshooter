@@ -266,7 +266,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4684824113255373002, guid: 29cee64704298bd469db84daea5fa064, type: 3}
       propertyPath: itemsToSpawn.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4684824113255373002, guid: 29cee64704298bd469db84daea5fa064, type: 3}
       propertyPath: initialTimer
@@ -404,7 +404,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4684824113255373002, guid: 29cee64704298bd469db84daea5fa064, type: 3}
       propertyPath: itemsToSpawn.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4684824113255373002, guid: 29cee64704298bd469db84daea5fa064, type: 3}
       propertyPath: initialTimer
@@ -672,7 +672,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4684824113255373002, guid: 29cee64704298bd469db84daea5fa064, type: 3}
       propertyPath: itemsToSpawn.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4684824113255373002, guid: 29cee64704298bd469db84daea5fa064, type: 3}
       propertyPath: initialTimer
@@ -877,6 +877,10 @@ PrefabInstance:
     - target: {fileID: 3187458483294746998, guid: 5c06935088d8ba44c9a8ab0111ab8176, type: 3}
       propertyPath: m_Name
       value: PlayerShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187458483294746999, guid: 5c06935088d8ba44c9a8ab0111ab8176, type: 3}
+      propertyPath: InitialSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3187458483294747003, guid: 5c06935088d8ba44c9a8ab0111ab8176, type: 3}
       propertyPath: m_LocalPosition.x

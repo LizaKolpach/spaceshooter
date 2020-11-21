@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class S_EnemyBullet : MonoBehaviour
 {
-    public float bulletspeed;
+    public float InitialSpeed;
     public bool right;
     public bool left;
 
@@ -18,6 +18,7 @@ public class S_EnemyBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float bulletspeed = InitialSpeed * Time.deltaTime;
         if (right) transform.position = new Vector3(transform.position.x - bulletspeed, 0, transform.position.z - bulletspeed);
         if (left) transform.position = new Vector3(transform.position.x + bulletspeed, 0, transform.position.z - bulletspeed);
         if (!left && !right) transform.position -= new Vector3 (0, 0, bulletspeed);

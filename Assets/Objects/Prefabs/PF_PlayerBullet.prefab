@@ -192,10 +192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d18a0d8d2c091408bbd303e8e17e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  InitialSpeed: 50
   killerZ: 25
   ParentSpaceship: {fileID: 0}
-  Explosion: {fileID: 5246085526913893054, guid: 74a03cec28a587f408abb4e90bcdac0e, type: 3}
 --- !u!54 &6881256192491640038
 Rigidbody:
   m_ObjectHideFlags: 0

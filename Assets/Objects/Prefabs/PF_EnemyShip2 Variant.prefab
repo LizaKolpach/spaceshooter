@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amplitude: 5
-  speed: {x: 0.01, y: 0, z: 0.01}
+  InitialSpeed: {x: 3, y: 0, z: 3}
 --- !u!1001 &893691239850281562
 PrefabInstance:
   m_ObjectHideFlags: 0

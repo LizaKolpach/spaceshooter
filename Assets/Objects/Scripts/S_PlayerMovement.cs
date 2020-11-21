@@ -5,7 +5,7 @@ using UnityEngine;
 public class S_PlayerMovement : MonoBehaviour    
 {
     public float xPosition;
-    public float MovementSpeed;
+    public float InitialSpeed;
     public float FieldBorders;
     float acceleration;
     public GameObject bulletPrefab;
@@ -28,6 +28,7 @@ public class S_PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float MovementSpeed = InitialSpeed * Time.deltaTime;
         Vector3 GunPosition = new Vector3 (transform.position.x, transform.position.y, (transform.position.z + 1f));
         if (Input.GetKey(KeyCode.A))
         {

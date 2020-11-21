@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class S_PlayerBullet : MonoBehaviour
 {
-    public float speed;
+    public float InitialSpeed;
     public float killerZ;
     public GameObject ParentSpaceship;
     
@@ -19,6 +19,7 @@ public class S_PlayerBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float speed = InitialSpeed * Time.deltaTime; 
         transform.position += new Vector3(0, 0, speed);
 
         if (transform.position.z > killerZ) Destruction();

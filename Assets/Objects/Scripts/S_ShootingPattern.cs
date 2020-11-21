@@ -75,11 +75,11 @@ public class S_ShootingPattern : MonoBehaviour
         
         GameObject bulletright = Instantiate(bullet, gunPosition + new Vector3(0, 0, 0), Quaternion.identity);
         bulletright.gameObject.GetComponent<S_EnemyBullet>().right = true;
-        bulletright.gameObject.GetComponent<S_EnemyBullet>().bulletspeed /= 3;
+        bulletright.gameObject.GetComponent<S_EnemyBullet>().InitialSpeed /= 3;
 
         GameObject bulletLeft = Instantiate(bullet, gunPosition - new Vector3(0, 0, 0), Quaternion.identity);
         bulletLeft.gameObject.GetComponent<S_EnemyBullet>().left = true;
-        bulletLeft.gameObject.GetComponent<S_EnemyBullet>().bulletspeed /= 3;
+        bulletLeft.gameObject.GetComponent<S_EnemyBullet>().InitialSpeed /= 3;
     }
 
 }
