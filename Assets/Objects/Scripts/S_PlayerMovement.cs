@@ -14,6 +14,7 @@ public class S_PlayerMovement : MonoBehaviour
     float shootCooldown;
     public float initialShootCooldown;
     public GameObject Explosion;
+    public float score;
     
 
     // Start is called before the first frame update
@@ -82,15 +83,20 @@ public class S_PlayerMovement : MonoBehaviour
     public void SpecialBullets()
     {
         Vector3 GunPosition = new Vector3(transform.position.x, transform.position.y, (transform.position.z + 1f));
-        Instantiate(bulletPrefab, GunPosition, Quaternion.identity);
+        GameObject bulletforward = Instantiate(bulletPrefab, GunPosition, Quaternion.identity);
+        bulletforward.GetComponent<S_PlayerBullet>().ParentSpaceship = gameObject;
 
         GameObject bulletright = Instantiate(bulletPrefab, GunPosition, Quaternion.identity);
         bulletright.gameObject.GetComponent <S_PlayerBullet>().right = true;
         bulletright.gameObject.GetComponent<S_PlayerBullet>().InitialSpeed /= 3;
+        bulletright.GetComponent<S_PlayerBullet>().ParentSpaceship = gameObject;
+
 
         GameObject bulletLeft = Instantiate(bulletPrefab, GunPosition, Quaternion.identity);
         bulletLeft.gameObject.GetComponent<S_PlayerBullet>().left = true;
         bulletLeft.gameObject.GetComponent<S_PlayerBullet>().InitialSpeed /= 3;
+        bulletLeft.GetComponent<S_PlayerBullet>().ParentSpaceship = gameObject;
+
     }
 
 }

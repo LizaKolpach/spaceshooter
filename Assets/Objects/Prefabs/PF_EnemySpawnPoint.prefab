@@ -110,4 +110,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialTimer: 2
   itemsToSpawn:
+  - {fileID: 4125976966311801635, guid: e13cce5f8d5a59141a8ef1f8dc823609, type: 3}
+  - {fileID: 3829587189966240121, guid: 05fafc3db45af7d459617f35fd66d495, type: 3}
   - {fileID: 6197863383625345214, guid: 429c48e70a8aaf842a4092b9f9ff1a71, type: 3}

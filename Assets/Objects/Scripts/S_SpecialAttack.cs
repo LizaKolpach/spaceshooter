@@ -7,6 +7,7 @@ public class S_SpecialAttack : MonoBehaviour
     bool canShootSpec;
     public float InitialCooldown;
     float cooldown;
+    
     // Start is called before the first frame update
     void Start()
     {

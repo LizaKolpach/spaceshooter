@@ -11,6 +11,7 @@ public class S_PlayerBullet : MonoBehaviour
     public bool left;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +37,9 @@ public class S_PlayerBullet : MonoBehaviour
         S_Enemy enemy = collisionWith.GetComponent<S_Enemy>();
         if (enemy != null)
         {
-            
+            ParentSpaceship.GetComponent<S_PlayerMovement>().score += 100;
+            float score = ParentSpaceship.GetComponent<S_PlayerMovement>().score;
+            Debug.Log(score);
             enemy.Destruction();
             Destruction();
         }
