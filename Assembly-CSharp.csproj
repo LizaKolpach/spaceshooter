@@ -67,6 +67,7 @@
     <Compile Include="Assets\Objects\Scripts\S_Enemy.cs" />
     <Compile Include="Assets\Objects\Scripts\S_PlayerBullet.cs" />
     <Compile Include="Assets\Objects\Scripts\S_ScrollTexture.cs" />
+    <Compile Include="Assets\Objects\Scripts\S_SpecialAttack.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

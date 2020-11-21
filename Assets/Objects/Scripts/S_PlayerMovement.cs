@@ -54,7 +54,7 @@ public class S_PlayerMovement : MonoBehaviour
 
         transform.position = new Vector3(xPosition, 0, -5f);
 
-        if (Input.GetKey(KeyCode.Space) && canShoot)
+        if (Input.GetKey(KeyCode.Mouse0) && canShoot)
         {
             GameObject newBullet = Instantiate(bulletPrefab, GunPosition, newRotation);
             newBullet.GetComponent<S_PlayerBullet>().ParentSpaceship = gameObject; 
@@ -77,6 +77,12 @@ public class S_PlayerMovement : MonoBehaviour
     {
         Instantiate(Explosion, transform.position, Quaternion.Euler(90, 0, 0));
         Destroy(gameObject);
+    }
+
+    public void SpecialBullets()
+    {
+        GameObject newBullet = Instantiate(bulletPrefab, gameObject.transform.position, newRotation);
+        newBullet.GetComponent<S_PlayerBullet>().ParentSpaceship = gameObject;        
     }
 
 }
