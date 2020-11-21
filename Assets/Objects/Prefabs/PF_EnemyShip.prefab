@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f962690721fb9f545a9d0537e32dd001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialCooldown: 1
+  InitialCooldown: 1.5
   bullet: {fileID: 6164336166380168572, guid: ed768686617194944bd2137f30932609, type: 3}
   ShootingMode: 0
 --- !u!33 &-8349620896569768435

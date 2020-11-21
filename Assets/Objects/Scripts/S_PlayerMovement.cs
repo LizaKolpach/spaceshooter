@@ -15,6 +15,8 @@ public class S_PlayerMovement : MonoBehaviour
     public float initialShootCooldown;
     public GameObject Explosion;
     public float score;
+    public GameObject GunExplosion;
+    public float speedDecrease;
     
 
     // Start is called before the first frame update
@@ -33,13 +35,13 @@ public class S_PlayerMovement : MonoBehaviour
         Vector3 GunPosition = new Vector3 (transform.position.x, transform.position.y, (transform.position.z + 1f));
         if (Input.GetKey(KeyCode.A))
         {
-            acceleration -= MovementSpeed;
+            acceleration -= MovementSpeed * speedDecrease;
 
             gameObject.transform.rotation = Quaternion.Euler (0, 0, 25);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            acceleration += MovementSpeed;
+            acceleration += MovementSpeed * speedDecrease;
             gameObject.transform.rotation = gameObject.transform.rotation = Quaternion.Euler(0, 0, -25);
         }
         else
@@ -47,7 +49,7 @@ public class S_PlayerMovement : MonoBehaviour
             gameObject.transform.rotation = gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
-        acceleration *= 0.98f;
+        acceleration *= 0.95f;
         xPosition += acceleration;
 
         if (xPosition > FieldBorders) xPosition = FieldBorders;
@@ -58,7 +60,8 @@ public class S_PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0) && canShoot)
         {
             GameObject newBullet = Instantiate(bulletPrefab, GunPosition, newRotation);
-            newBullet.GetComponent<S_PlayerBullet>().ParentSpaceship = gameObject; 
+            newBullet.GetComponent<S_PlayerBullet>().ParentSpaceship = gameObject;
+            Instantiate(GunExplosion, GunPosition, Quaternion.Euler(90, 0, 0));
             canShoot = false;
 
         }
@@ -86,6 +89,7 @@ public class S_PlayerMovement : MonoBehaviour
     {
         Vector3 GunPosition = new Vector3(transform.position.x, transform.position.y, (transform.position.z + 1f));
         GameObject bulletforward = Instantiate(bulletPrefab, GunPosition, Quaternion.identity);
+        Instantiate(GunExplosion, GunPosition, Quaternion.identity);
         bulletforward.GetComponent<S_PlayerBullet>().ParentSpaceship = gameObject;
 
         GameObject bulletright = Instantiate(bulletPrefab, GunPosition, Quaternion.identity);

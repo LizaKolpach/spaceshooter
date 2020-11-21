@@ -17,6 +17,11 @@ public class S_GameManager : MonoBehaviour
         {
             Invoke("GameOver", deathCooldown);
         }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         
     }
     public void GameOver()

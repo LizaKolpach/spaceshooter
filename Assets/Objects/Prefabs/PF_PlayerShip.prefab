@@ -106,12 +106,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xPosition: 0
-  MovementSpeed: 0.003
+  InitialSpeed: 0
   FieldBorders: 30
   bulletPrefab: {fileID: 1159827044572963577, guid: 9c33cd2ccc58f3545b575d226f7a2963, type: 3}
   canShoot: 0
   initialShootCooldown: 0.3
   Explosion: {fileID: 5246085526913893054, guid: 74a03cec28a587f408abb4e90bcdac0e, type: 3}
+  score: 0
+  GunExplosion: {fileID: 96846417728267605, guid: d1df13cf87a509341a100a09e677da2c, type: 3}
 --- !u!54 &1140627512
 Rigidbody:
   m_ObjectHideFlags: 0
