@@ -7,7 +7,8 @@ public class S_PlayerBullet : MonoBehaviour
     public float InitialSpeed;
     public float killerZ;
     public GameObject ParentSpaceship;
-    
+    public bool right;
+    public bool left;
 
 
     // Start is called before the first frame update
@@ -19,8 +20,7 @@ public class S_PlayerBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float speed = InitialSpeed * Time.deltaTime; 
-        transform.position += new Vector3(0, 0, speed);
+        Move();
 
         if (transform.position.z > killerZ) Destruction();
     }
@@ -43,6 +43,12 @@ public class S_PlayerBullet : MonoBehaviour
         
     }
 
-    
+    void Move()
+    {
+        float bulletspeed = InitialSpeed * Time.deltaTime;
+        if (right) transform.position = new Vector3(transform.position.x - bulletspeed, 0, transform.position.z + bulletspeed);
+        if (left) transform.position = new Vector3(transform.position.x + bulletspeed, 0, transform.position.z + bulletspeed);
+        if (!left && !right) transform.position += new Vector3(0, 0, bulletspeed);
+    }
 
 }

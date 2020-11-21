@@ -81,8 +81,16 @@ public class S_PlayerMovement : MonoBehaviour
 
     public void SpecialBullets()
     {
-        GameObject newBullet = Instantiate(bulletPrefab, gameObject.transform.position, newRotation);
-        newBullet.GetComponent<S_PlayerBullet>().ParentSpaceship = gameObject;        
+        Vector3 GunPosition = new Vector3(transform.position.x, transform.position.y, (transform.position.z + 1f));
+        Instantiate(bulletPrefab, GunPosition, Quaternion.identity);
+
+        GameObject bulletright = Instantiate(bulletPrefab, GunPosition, Quaternion.identity);
+        bulletright.gameObject.GetComponent <S_PlayerBullet>().right = true;
+        bulletright.gameObject.GetComponent<S_PlayerBullet>().InitialSpeed /= 3;
+
+        GameObject bulletLeft = Instantiate(bulletPrefab, GunPosition, Quaternion.identity);
+        bulletLeft.gameObject.GetComponent<S_PlayerBullet>().left = true;
+        bulletLeft.gameObject.GetComponent<S_PlayerBullet>().InitialSpeed /= 3;
     }
 
 }
