@@ -9,13 +9,15 @@ public class S_PlayerBullet : MonoBehaviour
     public GameObject ParentSpaceship;
     public bool right;
     public bool left;
+    public S_CameraShake CameraShake;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject camera = GameObject.Find("Main Camera");
+        CameraShake = camera.GetComponent<S_CameraShake>();
     }
 
     // Update is called once per frame
@@ -41,6 +43,7 @@ public class S_PlayerBullet : MonoBehaviour
             float score = ParentSpaceship.GetComponent<S_PlayerMovement>().score;
             Debug.Log(score);
             enemy.Destruction();
+            StartCoroutine(CameraShake.Shake(.2f, .1f));
             Destruction();
         }
         

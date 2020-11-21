@@ -77,6 +77,8 @@ public class S_PlayerMovement : MonoBehaviour
     public void Destruction()
     {
         Instantiate(Explosion, transform.position, Quaternion.Euler(90, 0, 0));
+        
+        
         Destroy(gameObject);
     }
 

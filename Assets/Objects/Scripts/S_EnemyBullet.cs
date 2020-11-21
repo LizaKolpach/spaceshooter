@@ -7,10 +7,14 @@ public class S_EnemyBullet : MonoBehaviour
     public float InitialSpeed;
     public bool right;
     public bool left;
+    public S_CameraShake CameraShake;
 
     // Start is called before the first frame update
     void Start()
     {
+        GameObject camera = GameObject.Find("Main Camera");
+        CameraShake = camera.GetComponent<S_CameraShake>(); 
+
         //right = false;
         //left = false;
     }
@@ -40,6 +44,7 @@ public class S_EnemyBullet : MonoBehaviour
         if (player != null)
         {
             player.Destruction();
+            StartCoroutine(CameraShake.Shake(1f, 1f));
             Destruction();
         }
         
